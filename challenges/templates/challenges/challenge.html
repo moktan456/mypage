@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+{% extends "base.html" %} {% block page_title %} {{month|title}} Challenge
+{%endblock page_title %} {% block content %}
+<h1>{{month|title}}'s challenge is:</h1>
+{% if challenge is not None %}
+<h2>{{challenge}}</h2>
+{% else %}
+<h2>No challenge for {{month}}</h2>
+{% endif %} {% endblock content %} {% comment %} <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,3 +22,4 @@
     {% endif %}
   </body>
 </html>
+{% endcomment %}
